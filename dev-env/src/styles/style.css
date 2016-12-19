@@ -12,7 +12,7 @@
 
 /* animation */
 .likes-heart {
-  opacity: 0;;
+  opacity: 0;
   transition: all 0.5s;
   transform: translateX(-50%) translateY(-50%) scale(5);
   display: block;
@@ -25,4 +25,3 @@
 .likes-heart.like-enter.like-enter-active {
   transform: translateX(-50%) translateY(-50%) scale(5);
 }
-
