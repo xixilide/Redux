@@ -18,11 +18,10 @@ const Courses = React.createClass({
     };
     return (
       <div style={styles.root}>
-        { courses.map((course, i) => <Course key={i} course={course} />)}
+      {courses.map((course, i) => <Course key={i} course={course} />)}
       </div>
     )
   }
 });
 
 export default Radium(Courses);
-
