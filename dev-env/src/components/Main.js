@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Radium, { StyleRoot } from 'radium';
+import { Link } from 'react-router';
 
 
 class Main extends Component {
@@ -27,12 +28,15 @@ class Main extends Component {
         letterSpacing: '-1px',
         lineHeight: '8.4rem',
         color: '#fff'
+      },
+      a: {
+        textDecoration: 'none'
       }
     };
     return (
       <StyleRoot style={styles.root}>
         <header style={styles.header}>
-          <div style={styles.logo}>西西里的美丽传说</div>
+          <Link to='/' style={styles.a}><div style={styles.logo}>西西里的美丽传说</div></Link>
         </header>
         { this.props.children }
       </StyleRoot>

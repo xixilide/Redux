@@ -3,8 +3,8 @@ import Radium from 'radium';
 
 import courses from '../data/courses';
 import Course from './Course';
-
 const Courses = React.createClass({
+
   render() {
     let styles = {
       root: {

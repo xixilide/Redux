@@ -21,7 +21,7 @@ class ShowCourse extends Component {
   render() {
     const { courseId } = this.props.params;
 
-    const index = courses.findIndex((c) => c.id === courseId);
+    const index = this.props.courses.findIndex((c) => c.id === courseId);
     const selectedCourse = courses[index];
 
     let styles = this.getStyles();
