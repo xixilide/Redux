@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import ActionThumbUp from 'material-ui/svg-icons/Action/thumb-up';
-import CommunicationComment from 'material-ui/svg-icons/communication/comment';
+// import ActionThumbUp from 'material-ui/svg-icons/Action/thumb-up';
+// import CommunicationComment from 'material-ui/svg-icons/communication/comment';
 import Radium from 'radium';
 
 class CourseActions extends Component {
@@ -70,12 +70,12 @@ class CourseActions extends Component {
         <div style={styles.name}>{course.name}</div>
         <div style={styles.btnWrap}>
           <button style={styles.button} onClick={this.props.increment.bind(null, parseInt(course.id) - 1)} key='1'>
-            <ActionThumbUp color='#4c5765' style={styles.icon} />
+            
             <div>{course.likes}</div>
           </button>
           <Link to={`/view/${course.id}`} style={styles.a}>
             <button style={styles.button} key='2'>
-              <CommunicationComment color='#4c5765' style={styles.icon} />
+              
               <div>{this.props.comments ? this.props.comments.length.toString() : '0'}</div>
             </button>
           </Link>

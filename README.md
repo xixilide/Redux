@@ -45,7 +45,9 @@ const store = createStore(rootReducer, defaultState);
 自定义了两个状态变量 courses 和 comments，其初始值分别是从文件 ./data/courses 和 ./data/courses 中导入的数据。
 
 这样，我们就把课程信息和评论信息存储到 store 容器中了
+
 接下来，就是调用 syncHistoryWithStore 把路由状态（routing state）信息存储到新创建的 store 容器内。
+
 ### 3. 存储到新创建的 store 容器内
 ```js
 export const history = syncHistoryWithStore(browserHistory, store);

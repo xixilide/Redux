@@ -38,7 +38,7 @@ class Main extends Component {
         <header style={styles.header}>
           <Link to='/' style={styles.a}><div style={styles.logo}>西西里的美丽传说</div></Link>
         </header>
-        { this.props.children }
+        { React.cloneElement(this.props.children, this.props) }
       </StyleRoot>
     );
   }
