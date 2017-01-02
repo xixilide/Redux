@@ -76,7 +76,7 @@ class CourseActions extends React.Component {
              <Link to={`/view/${course.id}`} style={styles.a}>
                <button style={styles.button} onClick={this.props.increment} key='2'>
                  <CommunicationComment color='#4c5765' style={styles.icon} />
-                 <div>0</div>
+                 <div>{this.props.comments ? this.props.comments.length.toString() : '0'}</div>
                </button>
              </Link>
            </div>

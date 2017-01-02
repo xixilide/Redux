@@ -2,15 +2,15 @@ const comments = {
   "1":[
     {
       "text":"用 React 配合上 Meteor 来制作成一个单页面应用（ SPA ） 架构的聊天室",
-      "user": "peter"
+      "user": "xixilide"
     },
     {
       "text":"学完课程之后，可以自己搭建一个网站了",
-      "user": "billie"
+      "user": "jiahom"
     },
     {
       "text":"React 框架的最佳入门课程",
-      "user": "peter"
+      "user": "liming"
     }
   ],
   "2":[
@@ -19,8 +19,8 @@ const comments = {
       "user": "peter"
     },
     {
-      "text":"有视频，有文字，很棒",
-      "user": "billie"
+      "text":"文字描写很详细，作者很用心",
+      "user": "siman"
     }
   ]
 };
