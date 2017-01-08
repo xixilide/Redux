@@ -5,6 +5,8 @@ injectTapEventPlugin();
 
 
 import App from './components/App';
+import Login from './components/login';
+import Register from './components/Register';
 import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import Courses from './components/Courses';
 import ShowCourse from './components/ShowCourse';
@@ -18,6 +20,8 @@ const router = (
       <Route path="/" component={App}>
         <IndexRoute component={Courses}></IndexRoute>
         <Route path="/view/:courseId" component={ShowCourse}></Route>
+        <Route path="/login" component={Login}></Route>
+        <Route path="/register" component={Register}></Route>
       </Route>
     </Router>
   </Provider>
