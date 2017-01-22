@@ -5,12 +5,13 @@ injectTapEventPlugin();
 
 
 import App from './components/App';
-import Login from './components/login';
-import Register from './components/Register';
+import Login from './user/login';
+import Register from './user/Register';
 import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import Courses from './components/Courses';
 import ShowCourse from './components/ShowCourse';
-import css from './styles/style.css';
+import  './styles/style.css';
+import  './styles/main.css';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 

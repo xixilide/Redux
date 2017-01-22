@@ -16,7 +16,8 @@ redux 中分别导入 createStore 模块 和 compose 模块。
 import { syncHistoryWithStore} from 'react-router-redux';
 import { browserHistory } from 'react-router';
 ```
-react-router-redux 包并不是 Redux 项目必须的，用它则可以在 redux-devtools-extension 中显示页面浏览历史，不用它 Redux 和 React Router 也可以在一起完美工作。
+react-router-redux 包并不是 Redux 项目必须的，用它则可以在 redux-devtools-extension 中
+显示页面浏览历史，不用它 Redux 和 React Router 也可以在一起完美工作。
 
 ### 2.构建状态树
 
@@ -32,7 +33,9 @@ const defaultState = {
 const store = createStore(rootReducer, defaultState);
 ```
 
-导入在静态文件中存储的课程信息和课程的评论信息，然后用它们来定义一个对象常量 defaultState，接下来使用 createStore 接口创建一个 store，createStore 接口的第一个参数是 rootReducer，也就是构建的状态树，第二个参数就是状态树的初始值。
+导入在静态文件中存储的课程信息和课程的评论信息，然后用它们来定义一个对象常量 defaultState，
+接下来使用 createStore 接口创建一个 store，createStore 接口的第一个参数是 rootReducer，
+也就是构建的状态树，第二个参数就是状态树的初始值。
 
 所谓的状态树就是一个普通的 JS 对象，本项目要构建的状态树其实是这样的：
 ```js
@@ -144,7 +147,7 @@ export default courses;
 ### 2.编写 comments reducer
 
 接下来新建一个文件 reducers/comments.js，添加代码：
-```
+```js
 function comments(state = [], action) {
   console.log(state, action);
   return state;

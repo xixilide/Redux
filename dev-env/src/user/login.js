@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Radium from 'radium';
-import axios from 'axios'
+import { connect } from 'react-redux';
+import { login } from '../actions/authActions';
+
 class Login extends Component {
   getStyles() {
     return {
@@ -41,30 +43,40 @@ class Login extends Component {
       }
     };
   }
-  handleSubmit(e){
-     e.preventDefault();
-     let username=this.refs.username.getValue();
-     let password = this.refs.password.getValue();
-     axios.post('http://localhost:4000/auth/login', { username, password })
-       .then(response => {
-         console.log(response.data.token)
-       })
-       .catch(error => {
-         console.log(error.response);
-       });
+  handleSubmit(event) {
+    event.preventDefault();
+    let username = this.refs.username.getValue();
+    let password = this.refs.password.getValue();
+    this.props.login({username, password});
   }
+
   render() {
     let styles = this.getStyles();
     return (
       <div style={styles.root}>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <TextField style={styles.textField} floatingLabelText="用户名" ref="username"/>
-          <TextField style={styles.textField} floatingLabelText="密码" type="password" ref="password"/>
-          <RaisedButton primary={true} style={styles.button} labelStyle={styles.label} type="submit" label="登录" />
+          <TextField
+            style={styles.textField}
+            floatingLabelText="用户名"
+            ref="username"/>
+          <TextField
+            style={styles.textField}
+            floatingLabelText="密码"
+            type="password"
+            ref="password"/>
+          <RaisedButton
+            primary={true}
+            style={styles.button}
+            labelStyle={styles.label}
+            type="submit"
+            label="登录" />
         </form>
       </div>
     );
   }
 }
+Login.propTypes = {
+  login: React.PropTypes.func.isRequired
+}
 
-export default Radium(Login);
+export default connect(null,{ login }) (Radium(Login));

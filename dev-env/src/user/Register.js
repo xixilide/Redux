@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Radium from 'radium';
+import { connect } from 'react-redux';
+import { signup } from '../actions/authActions';
+
 
 class Register extends Component {
   getStyles() {
@@ -41,21 +44,43 @@ class Register extends Component {
       }
     };
   }
-
+  handleSubmit(event) {
+    event.preventDefault();
+    let username = this.refs.username.getValue();
+    let password = this.refs.password.getValue();
+    let confirmPassword = this.refs.confirmPassword.getValue();
+    if(password !== confirmPassword) {
+      console.log('密码不匹配');
+      return;
+    }
+    this.props.signup({username, password});
+  }
   render() {
     let styles = this.getStyles();
     return (
       <div style={styles.root}>
         <form>
-          <TextField style={styles.textField} floatingLabelText="用户名" />
-          <TextField style={styles.textField} floatingLabelText="密码" type="password" />
-          <TextField style={styles.textField} floatingLabelText="确认密码" type="password" />
-          <TextField style={styles.textField} floatingLabelText="邮箱"  />
+          <TextField
+            style={styles.textField}
+            floatingLabelText="用户名"
+            ref="username" />
+          <TextField
+            style={styles.textField}
+            floatingLabelText="密码"
+            type="password"
+            ref="password"/>
+          <TextField
+            style={styles.textField}
+            floatingLabelText="确认密码"
+            type="password"
+            ref="confirmPassword"/>
           <RaisedButton primary={true} style={styles.button} labelStyle={styles.label} type="submit" label="注册" />
         </form>
       </div>
     );
   }
 }
-
-export default Radium(Register);
+Register.propTypes = {
+  signup: React.PropTypes.func.isRequired
+}
+export default connect(null, { signup })( Radium(Register));

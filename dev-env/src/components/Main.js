@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Radium, { StyleRoot } from 'radium';
 import { Link } from 'react-router';
+// import SideBar from './sideBar.js';
 
 
 class Main extends Component {
@@ -14,7 +15,7 @@ class Main extends Component {
   render() {
     let styles = {
       root: {
-        fontFamily: 'sans-serif'
+        fontFamily: 'sans-serif',
       },
       header: {
         backgroundColor: '#00bcd4',
@@ -55,6 +56,7 @@ class Main extends Component {
     };
     return (
       <StyleRoot style={styles.root}>
+      
         <header style={styles.header}>
           <Link to='/' style={styles.a}><div style={styles.logo}>西西里的美丽传说</div></Link>
           <Link to='/login' style={styles.a}><div style={styles.login}>登录</div></Link>

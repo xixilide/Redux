@@ -3,7 +3,6 @@
 ## React Redux 将React 和 Redux 绑定起来
 
 ### Installation
-
 ```
  npm install --save react-redux
 ```
@@ -34,7 +33,9 @@ Connects a React component to a Redux store. connect is a facade around connectA
 
 借助 React Devtools 来演示一下 Redux store 的 dispatch 接口的使用，发送一个 Redux action，从而触发 Redux reducer，进而更新存储在 store 中的状态变量
 
+```js
 $r.store.dispatch({type: 'INCREMENT_LIKE', index: 1})
+```
 
 ## 读取 Store 中的 Courses State
 ```js
